@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Complaint Submitted</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .success-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px 60px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 128, 0, 0.1);
+        }
+
+        .icon {
+            font-size: 40px;
+            color: rgb(72, 187, 72);
+            margin-bottom: 20px;
+        }
+
+        .success-logo {
+            height: 50px;
+            width: 50px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: rgb(63, 224, 63);
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            color: black;
+            margin-bottom: 30px;
+        }
+
+        .home-button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: rgb(72, 187, 72);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: rgb(56, 160, 56);
+        }
+    </style>
+</head>
+<body>
+
+<div class="success-container">
+    <div class="icon">✔</div>
+<!--    <img src="/images/submit1.jpg" alt="Success" class="success-logo">-->
+    <h1>Complaint Submitted Successfully</h1>
+    <p>Thank you! Your complaint has been recorded and will be addressed shortly.</p>
+    <a href="/bar" class="home-button">Return Back</a>
+</div>
+
+</body>
+</html>

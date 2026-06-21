@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Complaint Registration - Campus Care</title>
+
+</head>
+<style>
+
+
+  body {
+              margin: 0;
+              padding: 0;
+              font-family: 'Segoe UI', sans-serif;
+              background: url('https://images.unsplash.com/photo-1603575448362-11b8e8ee4b52') no-repeat center center fixed;
+              background-size: cover;
+          }
+
+          .navbar {
+              width: 100%;
+              padding: 15px 30px;
+              background-color: rgba(0, 0, 0, 0.6);
+              display: flex;
+              justify-content: flex-end;
+              position: fixed;
+              top: 0;
+              right: 2px;
+          }
+
+          .navbar a {
+              color: #fff;
+              text-decoration: none;
+              margin-left: 20px;
+              font-weight: bold;
+              padding: 8px 15px;
+              border-radius: 6px;
+              transition: background-color 0.3s;
+          }
+
+          .navbar a:hover {
+              background-color: rgba(255, 255, 255, 0.2);
+          }
+
+          .form-container {
+              background-color: rgba(255, 255, 255, 0.95);
+              width: 450px;
+              padding: 35px;
+              margin: 100px auto;
+              border-radius: 12px;
+              box-shadow: 0 0 25px rgba(0,0,0,0.2);
+          }
+
+          h2 {
+              text-align: center;
+              margin-bottom: 25px;
+              color: #333;
+          }
+
+          label {
+              display: block;
+              margin-top: 15px;
+              margin-bottom: 5px;
+              font-weight: bold;
+              color: #444;
+          }
+
+          input, select, textarea {
+              width: 100%;
+              padding: 10px;
+              border-radius: 6px;
+              border: 1px solid #ccc;
+              font-size: 14px;
+              margin-bottom: 15px;
+          }
+
+          textarea {
+              height: 100px;
+              resize: vertical;
+          }
+
+          button {
+              width: 100%;
+              padding: 12px;
+              background-color: #1e88e5;
+              border: none;
+              color: white;
+              font-size: 16px;
+              font-weight: bold;
+              border-radius: 6px;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+          }
+
+          button:hover {
+              background-color: #1565c0;
+          }
+
+
+          @media (max-width: 500px) {
+              .form-container {
+                  width: 90%;
+                  margin: 100px 10px;
+              }
+
+              .navbar {
+                  flex-direction: column;
+                  align-items: flex-end;
+              }
+
+              .navbar a {
+                  margin: 5px 0;
+              }
+          }
+
+
+</style>
+<body>
+<form action="/hema" th:object="${student}"  method="post">
+  <h1>campuscare</h1>
+
+
+<div class="navbar">
+
+    <a href="/">Home</a>
+
+<!--  <a href="/com">My Complaints</a>-->
+
+    <a href="/">Logout</a>
+
+</div>
+
+<div class="form-container">
+  <h2>Complaint Registration</h2>
+
+    <label >Name</label>
+    <input type="text" th:field="*{sname}"  placeholder="Enter Your Name" required />
+
+    <label >Registration Number</label>
+    <input type="number" th:field="*{regno}"  placeholder="Enter Your regno" required />
+
+    <label >Room No</label>
+    <input type="number" th:field="*{roomno}"  placeholder="Enter Your roomno" required />
+
+    <label >Department</label>
+    <select  th:field="*{dept}" type="text"  placeholder="Enter Your dept"required>
+      <option value="" disabled selected>Select your department</option>
+      <option value="CSE">Computer Science Engineering</option>
+      <option value="ECE">Electronics and Communication Engineering</option>
+      <option value="EEE">Electrical and Electronics Engineering</option>
+      <option value="ME">Mechanical Engineering</option>
+      <option value="CE">Civil Engineering</option>
+    </select>
+
+    <label >Complaint Type</label>
+    <select type="text" th:field="*{comp}"  placeholder="Enter Your complient" required>
+      <option value="" disabled selected>Select complaint type</option>
+      <option value="Water Problem">Water Problem</option>
+      <option value="Electricity Problem">Electricity Problem</option>
+      <option value="Others">Others</option>
+    </select>
+
+    <label >Description</label>
+    <textarea type="text" th:field="*{des}"  placeholder="Describe your issue here..." required></textarea>
+
+    <button type="submit">Submit Complaint</button>
+
+</div>
+
+</form>
+
+</body>
+</html>

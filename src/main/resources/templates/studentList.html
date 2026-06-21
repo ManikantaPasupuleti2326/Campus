@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Table</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        padding: 40px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .table th, .table td {
+        border: 1px solid #ccc;
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    .table th {
+        background-color: #007BFF;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .table tbody tr:hover {
+        background-color: #e0f0ff;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Student Details</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Reg No</th>
+    <th>Sname</th>
+    <th>Room No</th>
+    <th>Dept</th>
+    <th>Comp</th>
+    <th>Des</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr th:each="tempStudent : ${List}">
+    <td th:text="${tempStudent.getRegno()}"></td>
+    <td th:text="${tempStudent.getSname()}"></td>
+    <td th:text="${tempStudent.getRoomno()}"></td>
+    <td th:text="${tempStudent.getDept()}"></td>
+    <td th:text="${tempStudent.getComp()}"></td>
+    <td th:text="${tempStudent.getDes()}"></td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
