@@ -216,8 +216,8 @@ Through this project, I gained practical experience in:
 
 Java Backend Developer
 
-- LinkedIn: https://www.linkedin.com/in/your-profile
-- GitHub: https://github.com/yourusername
+- LinkedIn: https://www.linkedin.com/in/manikanta-pasupuleti
+- GitHub: https://github.com/ManikantaPasupuleti2326
 
 ---
 
